@@ -22,7 +22,7 @@ export default function RootLayout({
           <Header />
           <div className="flex min-h-screen">
             <Sidebar />
-            <main className="flex-1 p-4 overflow-y-auto bg-gray-100">{children}</main>
+            <main className="flex-1 p-4 overflow-y-auto bg-gray-100 duration-150">{children}</main>
           </div>
         </body>
       </ClerkProvider>

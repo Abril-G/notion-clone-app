@@ -69,7 +69,42 @@ export default function Sidebar() {
     );
     setGroupedData(grouped);
   }, [data]);
+  const menuOptionsDesktop =  (
+    <>
 
+    <div className="flex py-4 flex-col space-y-4 md:max-w-36">
+      {/* my documents */}
+      {groupedData.owner.length === 0 ?  (
+        <h2 className="text-gray-500 font-semibold text-sm">
+          No documents found
+        </h2>
+      ) : (
+        <>
+          <h2 className="text-gray-500 font-semibold text-sm">
+            My Documents
+          </h2>
+          {groupedData.owner.map((doc) => (
+              <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`}/>
+          ))}
+        </>
+      )}
+
+      {/* Share with me */}
+      {groupedData.editor.length > 0 && (
+        <>
+        <h2 className="text-gray-500 font-semibold text-sm">
+            Share with me
+          </h2>
+          {groupedData.editor.map((doc) => (
+              <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`}/>
+          ))}
+        </>
+      )}
+      {/* List */}
+      
+      </div>
+    </>
+  );
   const menuOptions = (
     <>
       <NewDocumentButton />
@@ -109,7 +144,7 @@ export default function Sidebar() {
   );
 
   return (
-    <div className="p-2 md:p-5 bg-gray-200 relative duration-150">
+    <div className="p-2 md:p-5 bg-gray-200 relative duration-150">      
       <div className="md:hidden block">
         <Sheet>
           <SheetTrigger>
@@ -125,6 +160,7 @@ export default function Sidebar() {
       </div>
       <div className="hidden md:block">
         <NewDocumentButton />
+        {menuOptionsDesktop}
       </div>
     </div>
   );
