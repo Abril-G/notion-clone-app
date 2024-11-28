@@ -9,13 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@blocknote/core": "^0.19.2",
-    "@blocknote/mantine": "^0.19.2",
-    "@blocknote/react": "^0.19.2",
     "@clerk/nextjs": "^6.5.1",
-    "@liveblocks/client": "^2.12.2",
-    "@liveblocks/react": "^2.12.2",
-    "@liveblocks/yjs": "^2.12.2",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.1",
@@ -28,8 +22,7 @@
     "react-dom": "^18.3.1",
     "react-firebase-hooks": "^5.1.1",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7",
-    "yjs": "^13.6.20"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
