@@ -14,9 +14,9 @@ function Document({ id }: { id:  string }) {
     // const isOwner = useOwner();
     
     useEffect(() => {
-        if (data) [
+        if (data) {
             setInput(data.title)
-        ]
+        }
     }, [data])
 
     const updateTitle = (e: FormEvent) => {
