@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { FormEvent, useEffect, useState, useTransition } from "react";
 import { Input } from "./ui/input";
@@ -6,12 +6,12 @@ import { Button } from "./ui/button";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
+import { title } from "process";
 
 function Document({ id }: { id:  string }) {
     const [data, loading, error] = useDocumentData(doc(db, "documents", id));
     const [input, setInput] = useState('');
     const [isUpdating, startTransition] = useTransition();
-    // const isOwner = useOwner();
     
     useEffect(() => {
         if (data) [
@@ -31,9 +31,9 @@ function Document({ id }: { id:  string }) {
         };
     }
   return (
-    <div className="">
-        <div className="max-w-6xl flex mx-auto justify-between pb-5">
-            <form className="flex space-x-2 flex-1" onSubmit={updateTitle}>
+    <div>
+        <div>
+            <form onSubmit={updateTitle}>
                 {/* Update title */}
                 <Input value={input} onChange={(e) => setInput(e.target.value)}/>
 

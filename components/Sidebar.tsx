@@ -71,6 +71,7 @@ export default function Sidebar() {
   }, [data]);
   const menuOptionsDesktop =  (
     <>
+
     <div className="flex py-4 flex-col space-y-4 md:max-w-36">
       {/* my documents */}
       {groupedData.owner.length === 0 ?  (
